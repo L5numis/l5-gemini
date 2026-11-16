@@ -28,8 +28,14 @@ member's own account: the person who connected it.
 
 ## Provenance searches
 
-`submit_provenance_search` takes the front and back photos and uses one of the member's daily searches.
-It returns a status and a `results_url` on l5.com. Give the person that link: they read the results on
+Get the photos in with `photo_upload_link` (a one-time link, 30 minutes):
+- if you can run commands and have the files, run its `command` with the real paths (front as obverse,
+  back as reverse), full size;
+- otherwise give the person `upload_url`: they open it and pick the two files.
+
+Then call `submit_provenance_search` with `upload_id`. Never shrink a photo or type it out as base64 for
+a search: small photos match less well. A search uses one of the member's daily searches and returns
+a status and a `results_url` on l5.com. Give the person that link: they read the results on
 l5.com, signed in. The results are never returned to the chat, so do not guess at matches.
 
 ## What L5 does not do here
